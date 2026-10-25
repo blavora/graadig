@@ -6,7 +6,7 @@ burger.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   burger.setAttribute('aria-expanded', open);
 });
-document.querySelectorAll('.nav-links a').forEach(a =>
+document.querySelectorAll('.nav-left a').forEach(a =>
   a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); })
 );
 

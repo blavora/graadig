@@ -8,202 +8,191 @@
   <meta property="og:title" content="GRÅDIG — Nordisk brasserie">
   <meta property="og:description" content="Rustik charme møder afslappet luksus. Kaffe, frokost og middag.">
   <meta property="og:url" content="https://graadig.dk">
-  <meta name="theme-color" content="#6B3149">
+  <meta property="og:image" content="https://graadig.dk/img/plating.jpg">
+  <meta name="theme-color" content="#7E2A2C">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="nav" id="top">
-  <a href="#top" class="logo" aria-label="GRÅDIG forside">GRÅDIG</a>
-  <nav class="nav-links" aria-label="Hovedmenu">
-    <a href="#om">Om os</a>
+  <nav class="nav-left" aria-label="Hovedmenu">
+    <a href="#om">Om</a>
     <a href="#menu">Menu</a>
-    <a href="#oplevelser">Oplevelser</a>
+    <a href="#selskaber">Selskaber</a>
     <a href="#besog">Besøg</a>
   </nav>
-  <a href="#book" class="btn btn-small">Book bord</a>
-  <button class="burger" aria-label="Åbn menu" aria-expanded="false"><span></span><span></span></button>
+  <a href="#top" class="logo" aria-label="GRÅDIG forside">GRÅDIG</a>
+  <div class="nav-right">
+    <a href="#book" class="pill">Book bord</a>
+    <button class="burger" aria-label="Åbn menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
 </header>
 
 <main>
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <p class="eyebrow">Nordisk brasserie · Kaffe · Frokost · Middag</p>
-      <h1>Rustik charme.<br><em>Afslappet luksus.</em></h1>
-      <p class="lead">Gode råvarer, generøse portioner og høj kvalitet — til priser, der gør det let at komme igen. Velkommen til GRÅDIG.</p>
-      <div class="hero-cta">
-        <a href="#book" class="btn">Book et bord</a>
-        <a href="#menu" class="btn btn-ghost">Se menuen</a>
+  <section class="panel hero">
+    <div class="hero-top">
+      <div>
+        <h1 class="reveal">Rustik charme<br>møder afslappet luksus</h1>
+        <p class="small hero-sub reveal">Et moderne nordisk brasserie med kvalitetskaffe, frokost og gennemførte middage — lavet af gode råvarer, serveret generøst, til fornuftige priser.</p>
       </div>
+      <dl class="spec reveal">
+        <div><dt>Kaffe &amp; morgen</dt><dd>08 – 11</dd></div>
+        <div><dt>Frokost</dt><dd>11.30 – 15</dd></div>
+        <div><dt>Middag</dt><dd>17.30 – 22</dd></div>
+        <div><dt>Råvarer</dt><dd>Nordiske, i sæson</dd></div>
+        <div><dt>Portioner</dt><dd>Generøse</dd></div>
+        <div><dt>Priser</dt><dd>Fornuftige</dd></div>
+      </dl>
     </div>
-    <div class="hero-swatches" aria-hidden="true">
-      <div class="swatch s-orange"><span>Kaffe</span><small>fra kl. 08</small></div>
-      <div class="swatch s-plum"><span>Frokost</span><small>11 – 15</small></div>
-      <div class="swatch s-peach"><span>Middag</span><small>fra kl. 17.30</small></div>
+    <div class="hero-bottom">
+      <figure class="inset reveal"><img src="img/vin.jpg" alt="Pasta, brød og et glas rødvin på et dækket bord" width="480" height="594"></figure>
+      <a href="#book" class="pill pill-light">Book et bord</a>
     </div>
   </section>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Generøst</span><span>✺</span><span>Nordisk</span><span>✺</span><span>Sæsonens råvarer</span><span>✺</span><span>Naturvin</span><span>✺</span><span>Specialkaffe</span><span>✺</span><span>Grådigt godt</span><span>✺</span>
-      <span>Generøst</span><span>✺</span><span>Nordisk</span><span>✺</span><span>Sæsonens råvarer</span><span>✺</span><span>Naturvin</span><span>✺</span><span>Specialkaffe</span><span>✺</span><span>Grådigt godt</span><span>✺</span>
+  <!-- SPLIT: OM -->
+  <section class="split" id="om">
+    <div class="split-photo">
+      <img src="img/plating.jpg" alt="Kokke anretter tallerkener i køkkenet" loading="lazy" width="960" height="1440">
+      <h2>Ærlige<br>nordiske smage</h2>
     </div>
-  </div>
-
-  <!-- OM -->
-  <section class="about" id="om">
-    <div class="about-head reveal">
-      <p class="eyebrow">Om GRÅDIG</p>
-      <h2>Mad, man bliver <em>grådig</em> efter.</h2>
-    </div>
-    <div class="about-body reveal">
-      <p>GRÅDIG er et moderne nordisk brasserie, hvor rustik charme møder afslappet luksus. Her starter dagen med kvalitetskaffe og nybagt brød, fortsætter med en ordentlig frokost og slutter med middage, der er gennemført fra første glas til sidste skefuld.</p>
-      <p>Vi tror på, at kvalitet ikke behøver at være højtidelig. Derfor laver vi mad af gode, nordiske råvarer, serverer den i generøse portioner og holder priserne fornuftige. Ingen dikkedarer — bare det, man har lyst til at komme tilbage efter.</p>
-      <ul class="pillars">
-        <li><strong>Gode råvarer</strong><span>Sæson, lokale leverandører og håndværk.</span></li>
-        <li><strong>Generøse portioner</strong><span>Ingen går sultne hjem. Det er et løfte.</span></li>
-        <li><strong>Fornuftige priser</strong><span>Høj kvalitet, der er til at betale.</span></li>
-      </ul>
+    <div class="split-text">
+      <p class="intro reveal">GRÅDIG er stedet, hvor dagen starter med god kaffe og slutter sent ved bordet. Vi laver mad, man bliver grådig efter — uden at det skal være højtideligt.</p>
+      <div class="blocks">
+        <article class="reveal">
+          <h3>Café</h3>
+          <p class="small">Specialkaffe fra danske ristere, kardemommesnurrer fra ovnen og morgenplatter med blødkogte æg, ost og surdejsbrød.</p>
+        </article>
+        <article class="reveal">
+          <h3>Frokost</h3>
+          <p class="small">Klassisk smørrebrød og brasserieretter med respekt for håndværket. Generøst anrettet, så ingen går sultne tilbage til kontoret.</p>
+        </article>
+        <article class="reveal">
+          <h3>Middag</h3>
+          <p class="small">Sæsonmenuer til hele bordet, à la carte-klassikere og en vinliste med fokus på små producenter. Lys dæmpet, stemningen høj.</p>
+          <a href="#book" class="arrow">Book et bord <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+      <figure class="thumb reveal"><img src="img/kaffe.jpg" alt="Barista hælder mælk i en cappuccino" loading="lazy" width="960" height="1200"></figure>
     </div>
   </section>
 
   <!-- MENU -->
   <section class="menu" id="menu">
-    <div class="section-head reveal">
-      <p class="eyebrow">Menu</p>
-      <h2>Fra første kop til <em>sidste skefuld</em></h2>
-    </div>
-
-    <div class="tabs" role="tablist" aria-label="Menukort">
-      <button role="tab" aria-selected="true" aria-controls="m-kaffe" id="t-kaffe">Kaffe &amp; morgen</button>
-      <button role="tab" aria-selected="false" aria-controls="m-frokost" id="t-frokost" tabindex="-1">Frokost</button>
-      <button role="tab" aria-selected="false" aria-controls="m-middag" id="t-middag" tabindex="-1">Middag</button>
+    <div class="menu-head">
+      <h2 class="reveal">Menu</h2>
+      <div class="tabs" role="tablist" aria-label="Menukort">
+        <button role="tab" aria-selected="true" aria-controls="m-kaffe" id="t-kaffe">Kaffe &amp; morgen</button>
+        <button role="tab" aria-selected="false" aria-controls="m-frokost" id="t-frokost" tabindex="-1">Frokost</button>
+        <button role="tab" aria-selected="false" aria-controls="m-middag" id="t-middag" tabindex="-1">Middag</button>
+      </div>
     </div>
 
     <div class="menu-panel" role="tabpanel" id="m-kaffe" aria-labelledby="t-kaffe">
       <div class="menu-col">
         <h3>Kaffebar</h3>
         <dl>
-          <div><dt>Espresso <small>enkelt eller dobbelt</small></dt><dd>32</dd></div>
+          <div><dt>Espresso<small>Enkelt eller dobbelt</small></dt><dd>32</dd></div>
           <div><dt>Cortado</dt><dd>40</dd></div>
           <div><dt>Flat white</dt><dd>45</dd></div>
-          <div><dt>Filterkaffe <small>dagens bønne, fri genopfyldning</small></dt><dd>35</dd></div>
-          <div><dt>Chai latte <small>hjemmelavet sirup</small></dt><dd>48</dd></div>
+          <div><dt>Filterkaffe<small>Dagens bønne, fri genopfyldning</small></dt><dd>35</dd></div>
+          <div><dt>Chai latte<small>Hjemmelavet sirup</small></dt><dd>48</dd></div>
         </dl>
       </div>
       <div class="menu-col">
         <h3>Morgen</h3>
         <dl>
-          <div><dt>Grådig morgenplatte <small>blødkogt æg, skinke, ost, oliven, surdejsbrød</small></dt><dd>125</dd></div>
-          <div><dt>Kardemommesnurre <small>bagt hver morgen</small></dt><dd>38</dd></div>
-          <div><dt>Yoghurt &amp; granola <small>skyr, ristede kerner, sæsonbær, honning</small></dt><dd>75</dd></div>
-          <div><dt>Surdejsbrød <small>pisket smør, flagesalt</small></dt><dd>45</dd></div>
+          <div><dt>Grådig morgenplatte<small>Blødkogt æg, skinke, ost, oliven, surdejsbrød</small></dt><dd>125</dd></div>
+          <div><dt>Kardemommesnurre<small>Bagt hver morgen</small></dt><dd>38</dd></div>
+          <div><dt>Skyr &amp; granola<small>Ristede kerner, sæsonbær, honning</small></dt><dd>75</dd></div>
+          <div><dt>Surdejsbrød<small>Pisket smør, flagesalt</small></dt><dd>45</dd></div>
         </dl>
       </div>
+      <figure class="menu-photo"><img src="img/platte.jpg" alt="Platte med figner, ost, pålæg og druer" loading="lazy" width="960" height="1440"></figure>
     </div>
 
     <div class="menu-panel" role="tabpanel" id="m-frokost" aria-labelledby="t-frokost" hidden>
       <div class="menu-col">
         <h3>Smørrebrød</h3>
         <dl>
-          <div><dt>Æg &amp; rejer <small>håndpillede rejer, mayonnaise, dild</small></dt><dd>115</dd></div>
-          <div><dt>Kartoffel <small>nye kartofler, ristede løg, purløg, krydderurter</small></dt><dd>95</dd></div>
-          <div><dt>Stjerneskud <small>stegt og dampet rødspætte, rejer, kaviar</small></dt><dd>165</dd></div>
+          <div><dt>Æg &amp; rejer<small>Håndpillede rejer, mayonnaise, dild</small></dt><dd>115</dd></div>
+          <div><dt>Kartoffel<small>Nye kartofler, ristede løg, purløg</small></dt><dd>95</dd></div>
+          <div><dt>Stjerneskud<small>Stegt og dampet rødspætte, rejer, kaviar</small></dt><dd>165</dd></div>
         </dl>
       </div>
       <div class="menu-col">
-        <h3>Retter</h3>
+        <h3>Brasseriet</h3>
         <dl>
-          <div><dt>Brasseriets moules frites <small>muslinger, hvidvin, fløde, pommes frites</small></dt><dd>175</dd></div>
-          <div><dt>Grådig burger <small>dry-aged oksekød, cheddar, syltede løg, fritter</small></dt><dd>165</dd></div>
-          <div><dt>Grøn salat <small>sæsonens grønt, bagt græskar, hytteost, frø</small></dt><dd>135</dd></div>
+          <div><dt>Moules frites<small>Muslinger, hvidvin, fløde, pommes frites</small></dt><dd>175</dd></div>
+          <div><dt>Grådig burger<small>Dry-aged okse, cheddar, syltede løg, fritter</small></dt><dd>165</dd></div>
+          <div><dt>Grøn salat<small>Bagt græskar, hytteost, ristede frø</small></dt><dd>135</dd></div>
         </dl>
       </div>
+      <figure class="menu-photo"><img src="img/plating.jpg" alt="Anrettede retter klar til servering" loading="lazy" width="960" height="1440"></figure>
     </div>
 
     <div class="menu-panel" role="tabpanel" id="m-middag" aria-labelledby="t-middag" hidden>
       <div class="menu-col">
         <h3>Grådig menu</h3>
-        <p class="menu-note">Tre retter, som køkkenet sammensætter efter sæsonen. Serveres til hele bordet.</p>
+        <p class="small note">Køkkenets sæsonmenu, serveret til hele bordet.</p>
         <dl>
           <div><dt>3 retter</dt><dd>395</dd></div>
           <div><dt>5 retter</dt><dd>545</dd></div>
-          <div><dt>Vinmenu <small>til 3 / 5 retter</small></dt><dd>325 / 475</dd></div>
+          <div><dt>Vinmenu<small>Til 3 / 5 retter</small></dt><dd>325 / 475</dd></div>
         </dl>
       </div>
       <div class="menu-col">
         <h3>À la carte</h3>
         <dl>
-          <div><dt>Tatar <small>okse, brunet smør, syltet sennepsfrø, rug</small></dt><dd>135</dd></div>
-          <div><dt>Bøf béarnaise <small>hanger steak, pommes frites, salat</small></dt><dd>245</dd></div>
-          <div><dt>Dagens fisk <small>beurre blanc, sæsongrønt</small></dt><dd>255</dd></div>
-          <div><dt>Crème brûlée <small>vanilje, brændt sukker — til at dele</small></dt><dd>85</dd></div>
+          <div><dt>Tatar<small>Okse, brunet smør, sennepsfrø, rug</small></dt><dd>135</dd></div>
+          <div><dt>Bøf béarnaise<small>Hanger steak, pommes frites, salat</small></dt><dd>245</dd></div>
+          <div><dt>Dagens fisk<small>Beurre blanc, sæsongrønt</small></dt><dd>255</dd></div>
+          <div><dt>Crème brûlée<small>Vanilje, brændt sukker — til at dele</small></dt><dd>85</dd></div>
         </dl>
       </div>
+      <figure class="menu-photo"><img src="img/gratin.jpg" alt="Gratinerede retter i hvide forme" loading="lazy" width="960" height="1440"></figure>
     </div>
-    <p class="menu-foot">Menuen skifter med sæsonen. Spørg personalet om allergener.</p>
+    <p class="small menu-foot">Menuen skifter med sæsonen. Spørg personalet om allergener.</p>
   </section>
 
-  <!-- OPLEVELSER -->
-  <section class="experiences" id="oplevelser">
-    <div class="section-head reveal">
-      <p class="eyebrow">Oplevelser</p>
-      <h2>Til hverdag, til fest — <em>til det hele</em></h2>
+  <!-- SELSKABER -->
+  <section class="panel olive" id="selskaber">
+    <div class="olive-grid">
+      <h2 class="reveal">Lange borde,<br>gode anledninger</h2>
+      <div class="olive-text reveal">
+        <p class="small">Fødselsdag, firmafest, barnedåb eller bryllup. Vi sammensætter menu og vin sammen med jer og dækker op til op til 40 gæster i restauranten — eller lukker hele huset.</p>
+        <dl class="spec">
+          <div><dt>Gæster</dt><dd>12 – 40</dd></div>
+          <div><dt>Menu</dt><dd>Fra 395 kr.</dd></div>
+          <div><dt>Weekendbrunch</dt><dd>Lør – søn</dd></div>
+          <div><dt>Vin &amp; vinyl</dt><dd>1. torsdag i måneden</dd></div>
+        </dl>
+        <a href="mailto:hej@graadig.dk?subject=Selskab%20hos%20GR%C3%85DIG" class="pill pill-light">Skriv til os</a>
+      </div>
     </div>
-    <div class="cards">
-      <article class="card c-orange reveal">
-        <span class="card-num">01</span>
-        <h3>Brunch i weekenden</h3>
-        <p>Lørdag og søndag dækker vi op til lange formiddage med platter, kaffe og bobler.</p>
-      </article>
-      <article class="card c-plum reveal">
-        <span class="card-num">02</span>
-        <h3>Selskaber</h3>
-        <p>Fødselsdag, firmafest eller bryllup. Vi sammensætter menuen sammen med dig — op til 40 gæster.</p>
-      </article>
-      <article class="card c-peach reveal">
-        <span class="card-num">03</span>
-        <h3>Vin &amp; vinylaftener</h3>
-        <p>Første torsdag i måneden: små retter, naturvin og plader på pladespilleren.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- QUOTE -->
-  <section class="quote reveal">
-    <blockquote>“Kvalitet behøver ikke være højtidelig. Den skal bare være <em>generøs</em>.”</blockquote>
-    <p>— Køkkenet på GRÅDIG</p>
   </section>
 
   <!-- BESØG + BOOK -->
   <section class="visit" id="besog">
-    <div class="visit-info reveal">
-      <p class="eyebrow">Besøg os</p>
-      <h2>Kom indenfor</h2>
-      <div class="hours">
-        <h3>Åbningstider</h3>
-        <dl>
-          <div><dt>Mandag – torsdag</dt><dd>08 – 22</dd></div>
-          <div><dt>Fredag</dt><dd>08 – 24</dd></div>
-          <div><dt>Lørdag</dt><dd>09 – 24</dd></div>
-          <div><dt>Søndag</dt><dd>09 – 16</dd></div>
-        </dl>
-      </div>
-      <div class="contact">
-        <h3>Kontakt</h3>
-        <p>Adresse offentliggøres snart</p>
-        <p><a href="mailto:hej@graadig.dk">hej@graadig.dk</a></p>
-      </div>
+    <div class="visit-info">
+      <h2 class="reveal">Besøg os</h2>
+      <dl class="spec spec-dark reveal">
+        <div><dt>Mandag – torsdag</dt><dd>08 – 22</dd></div>
+        <div><dt>Fredag</dt><dd>08 – 24</dd></div>
+        <div><dt>Lørdag</dt><dd>09 – 24</dd></div>
+        <div><dt>Søndag</dt><dd>09 – 16</dd></div>
+      </dl>
+      <p class="small contact reveal">Adresse offentliggøres snart<br><a href="mailto:hej@graadig.dk">hej@graadig.dk</a></p>
     </div>
 
-    <form class="book reveal" id="book" action="mailto:hej@graadig.dk" method="post" enctype="text/plain">
-      <h2>Book bord</h2>
-      <p class="book-sub">Send os en forespørgsel, så vender vi tilbage med en bekræftelse.</p>
+    <form class="panel book" id="book" action="mailto:hej@graadig.dk" method="post" enctype="text/plain">
+      <h2>Book et bord</h2>
+      <p class="small">Send en forespørgsel, så vender vi tilbage med en bekræftelse.</p>
       <div class="field-row">
         <label>Navn<input name="navn" required autocomplete="name"></label>
         <label>Telefon<input name="telefon" type="tel" required autocomplete="tel"></label>
@@ -211,26 +200,25 @@
       <div class="field-row">
         <label>Dato<input name="dato" type="date" required></label>
         <label>Tid
-          <select name="tid">
-            <option>12:00</option><option>13:00</option><option>17:30</option><option selected>18:30</option><option>19:30</option><option>20:30</option>
-          </select>
+          <select name="tid"><option>12:00</option><option>13:00</option><option>17:30</option><option selected>18:30</option><option>19:30</option><option>20:30</option></select>
         </label>
         <label>Gæster
-          <select name="gaester">
-            <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option>
-          </select>
+          <select name="gaester"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option></select>
         </label>
       </div>
       <label>Bemærkninger<textarea name="bemaerkninger" rows="3" placeholder="Allergier, anledning, barnestol …"></textarea></label>
-      <button class="btn" type="submit">Send forespørgsel</button>
+      <button class="pill pill-light" type="submit">Send forespørgsel</button>
     </form>
   </section>
 </main>
 
 <footer class="footer">
   <div class="footer-logo">GRÅDIG</div>
-  <p>Moderne nordisk brasserie · Kaffe · Frokost · Middag</p>
-  <p class="footer-small">© <span id="year">2026</span> GRÅDIG · <a href="mailto:hej@graadig.dk">hej@graadig.dk</a></p>
+  <div class="footer-row small">
+    <span>Moderne nordisk brasserie</span>
+    <a href="mailto:hej@graadig.dk">hej@graadig.dk</a>
+    <span>© <span id="year">2026</span></span>
+  </div>
 </footer>
 
 <script src="script.js"></script>
