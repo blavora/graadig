@@ -1,12 +1,12 @@
-// Sticky nav border + mobile menu
+// Sticky nav shadow + mobile menu
 const nav = document.querySelector('.nav');
 const burger = document.querySelector('.burger');
-addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), { passive: true });
 burger.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   burger.setAttribute('aria-expanded', open);
 });
-document.querySelectorAll('.nav-left a').forEach(a =>
+document.querySelectorAll('.nav a').forEach(a =>
   a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); })
 );
 
@@ -30,6 +30,10 @@ tabs.forEach((tab, i) => {
     next.focus();
   });
 });
+// Links elsewhere on the page that open a specific menu tab
+document.querySelectorAll('[data-tab]').forEach(a =>
+  a.addEventListener('click', () => select(document.getElementById(a.dataset.tab)))
+);
 
 // Reveal on scroll
 const io = new IntersectionObserver(entries => entries.forEach(e => {
