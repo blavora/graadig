@@ -3,346 +3,158 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Grådig — Nordisk brasserie</title>
-  <meta name="description" content="Grådig er et moderne nordisk brasserie, hvor rustik charme møder afslappet luksus. Kvalitetskaffe, frokost og gennemførte middagsoplevelser.">
-  <meta property="og:title" content="Grådig — Nordisk brasserie">
-  <meta property="og:description" content="Rustik charme møder afslappet luksus. Kaffe, frokost og middag.">
-  <meta property="og:url" content="https://graadig.dk">
-  <meta property="og:image" content="https://graadig.dk/img/plating.jpg">
-  <meta name="theme-color" content="#7E2A2C">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>GRÅDIG — Kommer snart</title>
+  <meta name="description" content="GRÅDIG — nordisk brasserie. Kaffe, brunch, frokost og middag. Vi åbner snart.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#ebe9e4">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:title" content="GRÅDIG — Kommer snart">
+  <meta property="og:description" content="Dit nye stamsted. Nordisk brasserie — vi åbner snart.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #ebe9e4;
+      --ink: #3a3835;
+      --cream: #f4eee6;
+      --fs: min(21.5vw, 280px);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; }
+    html { overflow-x: clip; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font: 500 15px/1.5 "Manrope", system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .poster {
+      width: min(100%, 1240px);
+      margin-inline: auto;
+      padding-top: clamp(16px, 4vw, 48px);
+      flex: 1;
+    }
+
+    .words {
+      margin: 0;
+      font: 400 var(--fs)/.8 "Permanent Marker", "Marker Felt", cursive;
+      text-align: center;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .words span { display: block; }
+    .words span:nth-child(1) { transform: rotate(-1.5deg) translateX(-1%); }
+    .words span:nth-child(2) { transform: rotate(1deg) translateX(2%); }
+    .words.bottom span:nth-child(1) { transform: rotate(1deg) translateX(1%); }
+    .words.bottom span:nth-child(2) { transform: rotate(-1.5deg) translateX(-2%); }
+
+    .photo {
+      position: relative;
+      z-index: 1;
+      width: min(82%, 980px);
+      margin: calc(var(--fs) * -.34) auto calc(var(--fs) * -.3);
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      background: #6e5440;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 58%;
+      display: block;
+      filter: saturate(.85) contrast(.95);
+    }
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(30, 20, 14, .38), rgba(30, 20, 14, .12) 70%);
+    }
+    .tag {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      margin: 0;
+      color: var(--cream);
+      font-size: clamp(13px, 2.2vw, 22px);
+      letter-spacing: .04em;
+      line-height: 1.3;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-shadow: 0 1px 14px rgba(0, 0, 0, .5);
+    }
+
+    @media (max-width: 640px) {
+      :root { --fs: 22vw; }
+      .poster { padding-top: 24px; }
+      .photo { width: 86%; aspect-ratio: 4 / 5; }
+      .tag { font-size: 15px; }
+    }
+
+    .foot {
+      width: min(100% - 32px, 1240px);
+      margin: clamp(32px, 6vw, 72px) auto 0;
+      padding: 20px 0 28px;
+      border-top: 1px solid rgba(58, 56, 53, .2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .logo {
+      width: 108px;
+      aspect-ratio: 1324 / 520;
+      background: var(--ink);
+      -webkit-mask: url(/img/logo.svg) center / contain no-repeat;
+      mask: url(/img/logo.svg) center / contain no-repeat;
+    }
+    .foot a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+    .foot a:hover { opacity: .7; }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .words span, .photo { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
+      .words.top span:nth-child(2) { animation-delay: .08s; }
+      .photo { animation-delay: .16s; }
+      .words.bottom span:nth-child(1) { animation-delay: .24s; }
+      .words.bottom span:nth-child(2) { animation-delay: .32s; }
+      @keyframes rise { from { opacity: 0; translate: 0 24px; } }
+    }
+  </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="logo" viewBox="0 0 1324 520"><g transform="translate(0.000000,520.000000) scale(0.100000,-0.100000)"
-fill="currentColor" stroke="none">
-<path d="M3676 5059 c-105 -14 -172 -34 -385 -115 -282 -107 -381 -151 -506
--223 -60 -35 -168 -95 -240 -133 -271 -147 -330 -182 -443 -267 -64 -48 -182
--146 -262 -217 -80 -71 -192 -169 -250 -219 -221 -189 -329 -303 -605 -640
--77 -93 -194 -231 -260 -305 -299 -335 -357 -423 -518 -795 -86 -201 -111
--289 -105 -381 11 -166 128 -259 338 -271 209 -12 438 71 767 279 187 117 341
-206 582 335 118 63 266 147 330 187 64 40 177 111 251 158 223 141 301 173
-346 143 38 -24 32 -70 -24 -178 -68 -134 -192 -305 -281 -389 -42 -40 -132
--111 -201 -157 -267 -181 -431 -311 -595 -476 -194 -195 -458 -542 -527 -693
--16 -34 -35 -93 -44 -129 -57 -245 155 -409 421 -326 129 41 290 140 409 253
-70 67 400 469 697 849 169 217 452 505 651 665 160 129 575 391 642 406 31 7
-38 5 47 -12 13 -25 0 -61 -86 -243 -96 -200 -145 -344 -145 -422 0 -126 121
--207 251 -170 116 34 181 92 345 307 27 36 117 135 199 220 83 85 216 235 297
-332 157 188 208 237 291 280 59 31 120 36 182 13 22 -8 60 -14 85 -15 74 0 66
--24 -60 -184 -170 -214 -227 -319 -256 -472 -31 -167 1 -318 87 -404 71 -71
-137 -94 254 -87 222 13 428 129 777 439 186 165 216 171 273 58 46 -92 93
--143 163 -177 49 -24 69 -28 142 -28 94 1 131 14 253 87 63 38 68 39 90 25 18
--12 26 -30 35 -81 12 -72 49 -161 87 -212 33 -43 119 -99 184 -118 30 -9 86
--16 125 -16 216 1 439 126 749 419 182 173 188 173 264 11 105 -224 310 -288
-536 -167 63 33 187 149 301 280 32 37 72 75 88 83 29 15 32 15 50 -3 10 -11
-27 -53 37 -95 74 -311 366 -358 628 -100 44 42 95 95 114 117 61 70 118 115
-144 115 21 0 29 -9 46 -47 38 -92 54 -116 104 -153 95 -72 202 -92 336 -65
-157 31 309 114 514 278 136 110 158 123 176 101 11 -14 9 -29 -15 -98 -66
--189 -124 -248 -359 -367 -618 -313 -1160 -710 -1340 -981 -98 -149 -132 -258
--125 -402 11 -203 123 -335 324 -382 134 -31 321 -16 451 35 168 66 493 262
-666 401 258 207 513 561 749 1038 173 351 172 350 688 530 327 115 393 144
-448 201 51 52 72 98 72 153 0 91 -82 157 -179 143 -74 -11 -186 -52 -336 -124
--196 -95 -230 -107 -260 -93 -19 9 -25 19 -25 42 0 35 55 176 155 395 123 272
-150 369 143 514 -7 145 -69 241 -193 298 -161 73 -351 42 -490 -80 -94 -83
--147 -97 -274 -73 -230 44 -376 4 -652 -180 -136 -90 -275 -217 -349 -319
--108 -149 -336 -397 -407 -444 -63 -42 -89 -48 -113 -26 -42 38 -19 144 79
-368 73 165 94 234 95 317 2 103 -35 168 -119 213 -32 17 -57 22 -120 21 -148
-0 -241 -66 -373 -263 -32 -48 -70 -112 -84 -142 -163 -346 -223 -445 -344
--564 -125 -123 -221 -126 -254 -10 -26 94 11 462 65 650 14 50 51 155 82 235
-30 80 88 242 127 360 90 264 124 343 231 530 267 463 310 684 157 795 -112 81
--284 59 -410 -50 -46 -40 -209 -280 -278 -410 -58 -108 -83 -177 -143 -396
--113 -414 -186 -569 -292 -624 -17 -9 -69 -23 -117 -31 -155 -27 -326 -104
--467 -210 -33 -24 -123 -102 -200 -172 -77 -70 -192 -172 -255 -226 -63 -54
--207 -191 -320 -305 -143 -144 -221 -215 -258 -235 -61 -32 -97 -29 -112 8
--17 47 35 208 139 428 75 157 104 264 98 359 -8 120 -52 188 -152 235 -79 36
--130 39 -225 14 -71 -20 -94 -22 -164 -15 -44 5 -108 8 -141 7 -135 -3 -304
--81 -515 -237 -76 -56 -157 -110 -181 -119 -83 -34 -149 5 -149 88 0 61 -27
-155 -55 192 -33 43 -79 69 -145 84 -46 10 -66 9 -125 -4 -113 -27 -213 -88
--415 -251 -30 -25 -65 -45 -77 -45 -26 0 -48 30 -58 78 -4 19 -25 52 -48 77
--93 96 -238 82 -354 -33 -25 -26 -91 -106 -145 -179 -122 -162 -172 -219 -265
--298 -67 -58 -176 -125 -202 -125 -20 0 -12 17 60 116 124 173 166 280 157
-398 -9 104 -68 187 -173 239 -72 35 -140 47 -276 47 -194 0 -347 -40 -550
--143 -252 -128 -550 -303 -777 -455 -560 -377 -669 -442 -766 -450 -48 -4 -56
--1 -87 26 -31 27 -34 36 -34 84 0 96 127 326 273 493 176 201 791 693 1152
-920 128 80 349 191 408 204 73 16 122 -12 122 -70 0 -12 -12 -56 -26 -97 -18
--52 -24 -85 -19 -109 9 -48 59 -100 108 -114 178 -48 527 135 738 387 233 279
-301 410 302 584 1 116 -17 164 -93 244 -67 71 -166 120 -284 141 -97 16 -117
-17 -220 4z m7824 -2059 c16 -29 5 -54 -58 -143 -76 -107 -232 -256 -304 -291
--64 -31 -83 -29 -98 10 -24 62 101 243 240 347 122 92 198 118 220 77z m-3169
--71 c13 -26 -9 -71 -106 -219 -151 -229 -331 -420 -438 -465 -35 -14 -38 -14
--57 5 -29 29 -25 69 16 148 94 183 301 398 498 516 33 20 63 36 68 36 4 0 12
--9 19 -21z m-2023 -38 c15 -101 -522 -668 -603 -637 -25 9 -28 34 -11 81 68
-177 336 454 543 560 55 28 67 27 71 -4z m4822 -1408 c0 -14 -20 -55 -47 -92
--237 -337 -572 -641 -736 -668 -29 -4 -40 -1 -61 20 -33 33 -33 64 0 130 49
-96 152 211 291 325 160 130 514 335 545 316 4 -3 8 -17 8 -31z M6692 4465
-c-224 -49 -440 -257 -507 -490 -36 -124 2 -265 93 -346 99 -87 264 -113 416
--65 192 60 393 247 467 434 17 43 23 78 24 142 0 75 -4 92 -30 144 -47 94
--128 153 -247 181 -76 18 -133 18 -216 0z m53 -275 c5 0 19 -10 32 -22 62 -58
--8 -206 -120 -253 -33 -14 -40 -14 -67 0 -68 35 -42 137 63 241 50 49 64 59
-73 48 6 -8 15 -14 19 -14z M10540 4370 c-57 -12 -192 -77 -267 -128 -105 -72
--206 -192 -264 -315 -38 -83 -45 -140 -25 -209 50 -174 302 -194 532 -42 130
-86 283 259 326 369 38 96 31 186 -18 244 -54 65 -183 101 -284 81z"/>
-</g></symbol></svg>
+  <main class="poster">
+    <h1 class="words top" aria-label="GRÅDIG kommer snart"><span>Kommer</span><span>snart</span></h1>
+    <figure class="photo">
+      <img src="/img/kaffe.jpg" alt="" width="960" height="1200">
+      <p class="tag">Dit nye<br>stamsted</p>
+    </figure>
+    <div class="words bottom" aria-hidden="true"><span>Kommer</span><span>snart</span></div>
+  </main>
 
-<div class="announce">
-  <span>Weekendbrunch lørdag og søndag fra kl. 9 · <a href="#book">Book bord</a></span>
-</div>
-
-<header class="nav" id="top">
-  <div class="nav-row">
-    <nav class="nav-side" aria-label="Info">
-      <a href="#om">Om os</a>
-      <a href="#menu">Menu</a>
-      <a href="#oplevelser">Oplevelser</a>
-    </nav>
-    <a href="#top" class="logo" aria-label="Grådig forside"><svg class="logo-mark" viewBox="0 0 1324 520" aria-hidden="true"><use href="#logo"/></svg></a>
-    <div class="nav-side nav-end">
-      <a href="#besog">Besøg</a>
-      <a href="#book" class="pill">Book bord</a>
-      <button class="burger" aria-label="Åbn menu" aria-expanded="false"><span></span><span></span></button>
-    </div>
-  </div>
-  <nav class="nav-cats" aria-label="Hovedmenu">
-    <a href="#menu" data-tab="t-kaffe">Kaffe &amp; morgen</a>
-    <a href="#menu" data-tab="t-frokost">Frokost</a>
-    <a href="#menu" data-tab="t-middag">Middag</a>
-    <a href="#oplevelser">Selskaber</a>
-    <a href="#besog">Åbningstider</a>
-  </nav>
-</header>
-
-<main>
-  <!-- HERO -->
-  <section class="card hero">
-    <div class="hero-text framed">
-      <span class="corner tl"></span><span class="corner tr"></span><span class="corner br"></span>
-      <dl class="spec hero-spec">
-        <div><dt>Kaffe &amp; morgen</dt><dd>08 – 11</dd></div>
-        <div><dt>Frokost</dt><dd>11.30 – 15</dd></div>
-        <div><dt>Middag</dt><dd>17.30 – 22</dd></div>
-      </dl>
-      <div>
-        <h1 class="reveal">Rustik charme.<br>Afslappet luksus.</h1>
-        <p class="small hero-sub reveal">Et moderne nordisk brasserie med kvalitetskaffe, frokost og gennemførte middage. Gode råvarer, generøse portioner, fornuftige priser.</p>
-        <a href="#book" class="pill pill-solid">Book et bord</a>
-      </div>
-    </div>
-    <figure class="hero-photo"><img src="img/plating.jpg" alt="Kokke anretter tallerkener i køkkenet" width="960" height="1440"></figure>
-  </section>
-
-  <!-- FEATURE BAND -->
-  <section class="card band">
-    <img class="band-bg" src="img/gratin.jpg" alt="" loading="lazy">
-    <div class="band-glass">
-      <div class="band-head">
-        <h2 class="reveal">Generøst.<br>Hver dag.</h2>
-        <a href="#menu" class="arrow">Se menuen <span aria-hidden="true">→</span></a>
-      </div>
-      <p class="small band-sub">Mad, man bliver grådig efter — uden at det skal være højtideligt.</p>
-      <ul class="features">
-        <li>
-          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14"/><path d="M16 24c0-6 2-10 7-13M16 24c0-5-2-8-6-10M16 24V12"/></svg>
-          <strong>Nordiske råvarer</strong><span>Lokale leverandører, i sæson</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14"/><path d="M8 17h16a8 8 0 0 1-16 0zM12 13c0-2 2-2 2-4M18 13c0-2 2-2 2-4"/></svg>
-          <strong>Generøse portioner</strong><span>Ingen går sultne hjem</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14"/><path d="M19 11.5a5 5 0 1 0 0 9M10 14.5h7M10 17.5h7"/></svg>
-          <strong>Fornuftige priser</strong><span>Kvalitet, der er til at betale</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14"/><path d="M9 13h12v4a6 6 0 0 1-12 0zM21 14h1.5a2 2 0 0 1 0 4H21"/></svg>
-          <strong>Specialkaffe</strong><span>Fra danske ristere</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14"/><path d="M12 8h8l-.5 6a3.5 3.5 0 0 1-7 0zM16 17.5V24M13 24h6"/></svg>
-          <strong>Naturvin</strong><span>Små producenter</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14"/><path d="M16 8v3M16 21v3M8 16h3M21 16h3M10.5 10.5l2 2M19.5 19.5l2 2M21.5 10.5l-2 2M12.5 19.5l-2 2"/><circle cx="16" cy="16" r="3"/></svg>
-          <strong>Sæsonmenu</strong><span>Skifter med årstiden</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- OM (split) -->
-  <section class="card split" id="om">
-    <figure class="split-photo"><img src="img/platte.jpg" alt="Platte med figner, ost, pålæg og druer" loading="lazy" width="960" height="1440"></figure>
-    <div class="split-text panel framed">
-      <span class="corner bl"></span><span class="corner br"></span>
-      <p class="eyebrow">Om Grådig</p>
-      <h2 class="reveal">Mad, man bliver<br>grådig efter.</h2>
-      <p class="small">Grådig er stedet, hvor dagen starter med god kaffe og slutter sent ved bordet. Rustik charme møder afslappet luksus: nybagt brød om morgenen, ordentlig frokost midt på dagen og gennemførte middage om aftenen.</p>
-      <p class="small">Vi laver mad af gode, nordiske råvarer, serverer den generøst og holder priserne fornuftige. Ingen dikkedarer — bare det, man har lyst til at komme tilbage efter.</p>
-      <a href="#book" class="pill pill-light">Book et bord</a>
-    </div>
-  </section>
-
-  <!-- KATEGORIER -->
-  <section class="card cats-card" id="oplevelser">
-    <div class="cats-head">
-      <h2 class="reveal">Oplev<br>Grådig</h2>
-      <p class="small">Fra første kop til sidste skefuld.</p>
-    </div>
-    <div class="cats">
-      <a class="cat" href="#menu" data-tab="t-kaffe">
-        <img src="img/kaffe.jpg" alt="Barista hælder mælk i en cappuccino" loading="lazy">
-        <span class="cat-title">Kaffe &amp; morgen</span>
-        <span class="cat-btn">Se menu</span>
-      </a>
-      <a class="cat" href="#menu" data-tab="t-frokost">
-        <img src="img/platte.jpg" alt="Frokostplatte med ost og frugt" loading="lazy">
-        <span class="cat-title">Frokost</span>
-        <span class="cat-btn">Se menu</span>
-      </a>
-      <a class="cat" href="#menu" data-tab="t-middag">
-        <img src="img/plating.jpg" alt="Middagsretter anrettes" loading="lazy">
-        <span class="cat-title">Middag</span>
-        <span class="cat-btn">Se menu</span>
-      </a>
-      <a class="cat" href="mailto:hej@graadig.dk?subject=Selskab%20hos%20Gr%C3%A5dig">
-        <img src="img/vin.jpg" alt="Dækket bord med pasta og rødvin" loading="lazy">
-        <span class="cat-title">Selskaber</span>
-        <span class="cat-btn">Skriv til os</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- MENU -->
-  <section class="card menu" id="menu">
-    <div class="menu-head">
-      <h2 class="reveal">Menu</h2>
-      <div class="tabs" role="tablist" aria-label="Menukort">
-        <button role="tab" aria-selected="true" aria-controls="m-kaffe" id="t-kaffe">Kaffe &amp; morgen</button>
-        <button role="tab" aria-selected="false" aria-controls="m-frokost" id="t-frokost" tabindex="-1">Frokost</button>
-        <button role="tab" aria-selected="false" aria-controls="m-middag" id="t-middag" tabindex="-1">Middag</button>
-      </div>
-    </div>
-
-    <div class="menu-panel" role="tabpanel" id="m-kaffe" aria-labelledby="t-kaffe">
-      <div class="menu-col">
-        <h3>Kaffebar</h3>
-        <dl>
-          <div><dt>Espresso<small>Enkelt eller dobbelt</small></dt><dd>32</dd></div>
-          <div><dt>Cortado</dt><dd>40</dd></div>
-          <div><dt>Flat white</dt><dd>45</dd></div>
-          <div><dt>Filterkaffe<small>Dagens bønne, fri genopfyldning</small></dt><dd>35</dd></div>
-          <div><dt>Chai latte<small>Hjemmelavet sirup</small></dt><dd>48</dd></div>
-        </dl>
-      </div>
-      <div class="menu-col">
-        <h3>Morgen</h3>
-        <dl>
-          <div><dt>Grådig morgenplatte<small>Blødkogt æg, skinke, ost, oliven, surdejsbrød</small></dt><dd>125</dd></div>
-          <div><dt>Kardemommesnurre<small>Bagt hver morgen</small></dt><dd>38</dd></div>
-          <div><dt>Skyr &amp; granola<small>Ristede kerner, sæsonbær, honning</small></dt><dd>75</dd></div>
-          <div><dt>Surdejsbrød<small>Pisket smør, flagesalt</small></dt><dd>45</dd></div>
-        </dl>
-      </div>
-    </div>
-
-    <div class="menu-panel" role="tabpanel" id="m-frokost" aria-labelledby="t-frokost" hidden>
-      <div class="menu-col">
-        <h3>Smørrebrød</h3>
-        <dl>
-          <div><dt>Æg &amp; rejer<small>Håndpillede rejer, mayonnaise, dild</small></dt><dd>115</dd></div>
-          <div><dt>Kartoffel<small>Nye kartofler, ristede løg, purløg</small></dt><dd>95</dd></div>
-          <div><dt>Stjerneskud<small>Stegt og dampet rødspætte, rejer, kaviar</small></dt><dd>165</dd></div>
-        </dl>
-      </div>
-      <div class="menu-col">
-        <h3>Brasseriet</h3>
-        <dl>
-          <div><dt>Moules frites<small>Muslinger, hvidvin, fløde, pommes frites</small></dt><dd>175</dd></div>
-          <div><dt>Grådig burger<small>Dry-aged okse, cheddar, syltede løg, fritter</small></dt><dd>165</dd></div>
-          <div><dt>Grøn salat<small>Bagt græskar, hytteost, ristede frø</small></dt><dd>135</dd></div>
-        </dl>
-      </div>
-    </div>
-
-    <div class="menu-panel" role="tabpanel" id="m-middag" aria-labelledby="t-middag" hidden>
-      <div class="menu-col">
-        <h3>Grådig menu</h3>
-        <p class="small note">Køkkenets sæsonmenu, serveret til hele bordet.</p>
-        <dl>
-          <div><dt>3 retter</dt><dd>395</dd></div>
-          <div><dt>5 retter</dt><dd>545</dd></div>
-          <div><dt>Vinmenu<small>Til 3 / 5 retter</small></dt><dd>325 / 475</dd></div>
-        </dl>
-      </div>
-      <div class="menu-col">
-        <h3>À la carte</h3>
-        <dl>
-          <div><dt>Tatar<small>Okse, brunet smør, sennepsfrø, rug</small></dt><dd>135</dd></div>
-          <div><dt>Bøf béarnaise<small>Hanger steak, pommes frites, salat</small></dt><dd>245</dd></div>
-          <div><dt>Dagens fisk<small>Beurre blanc, sæsongrønt</small></dt><dd>255</dd></div>
-          <div><dt>Crème brûlée<small>Vanilje, brændt sukker — til at dele</small></dt><dd>85</dd></div>
-        </dl>
-      </div>
-    </div>
-    <p class="small menu-foot">Menuen skifter med sæsonen. Spørg personalet om allergener.</p>
-  </section>
-
-  <!-- BESØG + BOOK -->
-  <section class="card visit" id="besog">
-    <div class="visit-info framed">
-      <span class="corner tl"></span><span class="corner tr"></span>
-      <h2 class="reveal">Besøg os</h2>
-      <dl class="spec spec-dark">
-        <div><dt>Mandag – torsdag</dt><dd>08 – 22</dd></div>
-        <div><dt>Fredag</dt><dd>08 – 24</dd></div>
-        <div><dt>Lørdag</dt><dd>09 – 24</dd></div>
-        <div><dt>Søndag</dt><dd>09 – 16</dd></div>
-      </dl>
-      <p class="small contact">Adresse offentliggøres snart<br><a href="mailto:hej@graadig.dk">hej@graadig.dk</a></p>
-    </div>
-
-    <form class="panel book" id="book" action="mailto:hej@graadig.dk" method="post" enctype="text/plain">
-      <h2>Book et bord</h2>
-      <p class="small">Send en forespørgsel, så vender vi tilbage med en bekræftelse.</p>
-      <div class="field-row">
-        <label>Navn<input name="navn" required autocomplete="name"></label>
-        <label>Telefon<input name="telefon" type="tel" required autocomplete="tel"></label>
-      </div>
-      <div class="field-row">
-        <label>Dato<input name="dato" type="date" required></label>
-        <label>Tid
-          <select name="tid"><option>12:00</option><option>13:00</option><option>17:30</option><option selected>18:30</option><option>19:30</option><option>20:30</option></select>
-        </label>
-        <label>Gæster
-          <select name="gaester"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option></select>
-        </label>
-      </div>
-      <label>Bemærkninger<textarea name="bemaerkninger" rows="3" placeholder="Allergier, anledning, barnestol …"></textarea></label>
-      <button class="pill pill-light" type="submit">Send forespørgsel</button>
-    </form>
-  </section>
-</main>
-
-<footer class="card panel footer">
-  <div class="footer-cols small">
-    <div class="footer-news">
-      <strong>Grådig i din indbakke</strong>
-      <span>Sæsonmenuer, events og vin &amp; vinyl-aftener.</span>
-      <a class="news-btn" href="mailto:hej@graadig.dk?subject=Nyhedsbrev">Skriv dig op <span aria-hidden="true">→</span></a>
-    </div>
-    <div><strong>Besøg</strong><span>Adresse følger</span><a href="mailto:hej@graadig.dk">hej@graadig.dk</a></div>
-    <div><strong>Spis</strong><a href="#menu">Menu</a><a href="#oplevelser">Selskaber</a><a href="#book">Book bord</a></div>
-    <div><strong>Følg</strong><span>Instagram</span><span>Facebook</span></div>
-  </div>
-  <div class="footer-logo framed">
-    <span class="corner tl"></span><span class="corner tr"></span>
-    <svg class="logo-mark" viewBox="0 0 1324 520" aria-hidden="true"><use href="#logo"/></svg>
-  </div>
-  <p class="footer-copy small">© <span id="year">2026</span> Grådig · Moderne nordisk brasserie</p>
-</footer>
-
-<script src="script.js"></script>
+  <footer class="foot">
+    <div class="logo" role="img" aria-label="GRÅDIG"></div>
+    <span>Nordisk brasserie · Åbner snart</span>
+    <a href="mailto:info@graadig.dk">info@graadig.dk</a>
+  </footer>
 </body>
 </html>
