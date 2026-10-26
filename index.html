@@ -3,157 +3,156 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GRÅDIG — Kommer snart</title>
-  <meta name="description" content="GRÅDIG — nordisk brasserie. Kaffe, brunch, frokost og middag. Vi åbner snart.">
+  <title>Grådig — Kommer snart</title>
+  <meta name="description" content="Grådig — nordisk brasserie. Kaffe, brunch, frokost og middag. Vi åbner snart.">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#ebe9e4">
+  <meta name="theme-color" content="#fdf3ea">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="da_DK">
-  <meta property="og:title" content="GRÅDIG — Kommer snart">
+  <meta property="og:title" content="Grådig — Kommer snart">
   <meta property="og:description" content="Dit nye stamsted. Nordisk brasserie — vi åbner snart.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/img/bord-flash.jpg?v=2">
   <style>
     :root {
-      --paper: #ebe9e4;
-      --ink: #3a3835;
-      --cream: #f4eee6;
-      --fs: min(21.5vw, 280px);
+      --persimmon: #fe5d34;
+      --plum: #533146;
+      --plum-deep: #2e1a27;
+      --caramel: #f4ba95;
+      --paper: #fdf3ea;
+      --mono: "DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+      --ease: cubic-bezier(.2, .7, .2, 1);
     }
     *, *::before, *::after { box-sizing: border-box; }
     html, body { margin: 0; }
     html { overflow-x: clip; }
     body {
+      min-height: 100svh;
+      display: flex; flex-direction: column;
       background: var(--paper);
-      color: var(--ink);
-      font: 500 15px/1.5 "Manrope", system-ui, -apple-system, sans-serif;
+      color: var(--plum-deep);
+      font: 400 12px/1.5 var(--mono);
+      letter-spacing: .04em;
+      text-transform: uppercase;
       -webkit-font-smoothing: antialiased;
       overflow-x: clip;
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
     }
+    a { color: inherit; text-decoration: none; }
+    :focus-visible { outline: 2px solid var(--persimmon); outline-offset: 3px; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+    /* Lettering, recoloured via mask */
+    .mark {
+      display: block;
+      background: currentColor;
+      -webkit-mask: var(--src) center / contain no-repeat;
+      mask: var(--src) center / contain no-repeat;
+    }
+
+    .top, .foot {
+      width: min(100% - 32px, 1240px);
+      margin-inline: auto;
+      display: flex; flex-wrap: wrap; gap: 8px 24px;
+      align-items: center; justify-content: space-between;
+    }
+    .top { padding: 20px 0; }
+    .foot {
+      padding: 18px 0 24px;
+      border-top: 1px solid color-mix(in srgb, var(--plum-deep) 22%, transparent);
+    }
+    .foot a { border-bottom: 1px solid currentColor; }
+    .foot a:hover { color: var(--persimmon); }
+    .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--persimmon); margin-right: 10px; vertical-align: 1px; }
 
     .poster {
-      width: min(100%, 1240px);
-      margin-inline: auto;
-      padding-top: clamp(16px, 4vw, 48px);
       flex: 1;
-    }
-
-    .words {
-      margin: 0;
-      font: 400 var(--fs)/.8 "Permanent Marker", "Marker Felt", cursive;
-      text-align: center;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 2;
-      pointer-events: none;
-      white-space: nowrap;
-    }
-    .words span { display: block; }
-    .words span:nth-child(1) { transform: rotate(-1.5deg) translateX(-1%); }
-    .words span:nth-child(2) { transform: rotate(1deg) translateX(2%); }
-    .words.bottom span:nth-child(1) { transform: rotate(1deg) translateX(1%); }
-    .words.bottom span:nth-child(2) { transform: rotate(-1.5deg) translateX(-2%); }
-
-    .photo {
-      position: relative;
-      z-index: 1;
-      width: min(82%, 980px);
-      margin: calc(var(--fs) * -.34) auto calc(var(--fs) * -.3);
-      aspect-ratio: 3 / 2;
-      overflow: hidden;
-      background: #6e5440;
-    }
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 58%;
-      display: block;
-      filter: saturate(.85) contrast(.95);
-    }
-    .photo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(30, 20, 14, .38), rgba(30, 20, 14, .12) 70%);
-    }
-    .tag {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      display: grid;
-      place-items: center;
-      margin: 0;
-      color: var(--cream);
-      font-size: clamp(13px, 2.2vw, 22px);
-      letter-spacing: .04em;
-      line-height: 1.3;
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: 600;
-      text-shadow: 0 1px 14px rgba(0, 0, 0, .5);
-    }
-
-    @media (max-width: 640px) {
-      :root { --fs: 22vw; }
-      .poster { padding-top: 24px; }
-      .photo { width: 86%; aspect-ratio: 4 / 5; }
-      .tag { font-size: 15px; }
-    }
-
-    .foot {
       width: min(100% - 32px, 1240px);
-      margin: clamp(32px, 6vw, 72px) auto 0;
-      padding: 20px 0 28px;
-      border-top: 1px solid rgba(58, 56, 53, .2);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+      margin: 0 auto;
+      padding: clamp(8px, 2vw, 24px) 0 clamp(32px, 4vw, 48px);
+      display: grid;
+      justify-items: center;
+      position: relative;
     }
-    .logo {
-      width: 108px;
-      aspect-ratio: 1324 / 520;
-      background: var(--ink);
-      -webkit-mask: url(/img/logo.svg) center / contain no-repeat;
-      mask: url(/img/logo.svg) center / contain no-repeat;
+
+    .snap {
+      position: relative; z-index: 1;
+      margin: 0;
+      width: min(90vw, 700px, calc(100svh - 258px));
+      min-width: 260px;
+      aspect-ratio: 1 / 1;
+      background: var(--plum-deep);
+      rotate: -2deg;
     }
-    .foot a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
-    .foot a:hover { opacity: .7; }
-    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    @media (max-width: 600px) { .snap { aspect-ratio: 4 / 5; } }
+    .snap img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block; }
+    .snap::after {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(70% 45% at 50% 42%, rgba(46, 26, 39, .5), rgba(46, 26, 39, .12) 75%);
+    }
+    .brand {
+      --src: url(/img/logo-script.svg?v=2);
+      position: absolute; z-index: 1;
+      left: 50%; top: 42%;
+      width: 64%;
+      aspect-ratio: 1664 / 608;
+      translate: -50% -50%;
+      rotate: -4deg;
+      color: var(--paper);
+    }
+    .snap figcaption {
+      position: absolute; z-index: 1; top: 14px; right: -10px;
+      background: var(--paper);
+      padding: 6px 10px;
+      rotate: 4deg;
+      border: 1px solid var(--plum-deep);
+    }
+
+    .soon {
+      --src: url(/img/kommer-snart.svg?v=2);
+      width: min(96vw, 980px);
+      aspect-ratio: 1794 / 398;
+      color: var(--persimmon);
+      position: relative; z-index: 2;
+      margin-top: calc(min(96vw, 980px) * -.2);
+      filter: drop-shadow(0 2px 0 rgba(46, 26, 39, .12));
+    }
+
+    .tag { margin: clamp(16px, 2vw, 24px) 0 0; text-align: center; }
 
     @media (prefers-reduced-motion: no-preference) {
-      .words span, .photo { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
-      .words.top span:nth-child(2) { animation-delay: .08s; }
-      .photo { animation-delay: .16s; }
-      .words.bottom span:nth-child(1) { animation-delay: .24s; }
-      .words.bottom span:nth-child(2) { animation-delay: .32s; }
+      .snap, .soon, .tag { animation: rise .9s var(--ease) both; }
+      .brand { animation: pop 1s var(--ease) .35s both; }
+      @keyframes pop { from { opacity: 0; scale: .92; } }
+      .soon { animation: rise .9s var(--ease) .2s both, write 1.4s var(--ease) .2s both; }
+      .tag { animation-delay: .35s; }
       @keyframes rise { from { opacity: 0; translate: 0 24px; } }
+      @keyframes write { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
     }
   </style>
 </head>
 <body>
+  <header class="top">
+    <span>Nordisk brasserie</span>
+    <span><i class="dot" aria-hidden="true"></i>Åbner snart</span>
+  </header>
+
   <main class="poster">
-    <h1 class="words top" aria-label="GRÅDIG kommer snart"><span>Kommer</span><span>snart</span></h1>
-    <figure class="photo">
-      <img src="/img/kaffe.jpg" alt="" width="960" height="1200">
-      <p class="tag">Dit nye<br>stamsted</p>
+    <h1 class="sr">Grådig — kommer snart</h1>
+    <figure class="snap">
+      <!-- Foto: Andrew Amelianovich, Unsplash (Unsplash License) — unsplash.com/photos/DRTqdLhJe9E -->
+      <img src="/img/bord-flash.jpg?v=2" alt="Træbord med retter, vin og stearinlys fotograferet med flash" width="1400" height="1867">
+      <span class="brand mark" aria-hidden="true"></span>
+      <figcaption>Dit nye stamsted</figcaption>
     </figure>
-    <div class="words bottom" aria-hidden="true"><span>Kommer</span><span>snart</span></div>
+    <span class="soon mark" aria-hidden="true"></span>
+    <p class="tag">Kaffe · Brunch · Frokost · Middag</p>
   </main>
 
   <footer class="foot">
-    <div class="logo" role="img" aria-label="GRÅDIG"></div>
-    <span>Nordisk brasserie · Åbner snart</span>
+    <span>© Grådig</span>
     <a href="mailto:info@graadig.dk">info@graadig.dk</a>
   </footer>
 </body>

@@ -298,3 +298,15 @@ p { margin: 0 0 1em; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .card, .btn, .pillar { transition: none; }
 }
+
+/* Script logo (img/logo-script.svg), recoloured via mask */
+.logo-mark {
+  display: block;
+  aspect-ratio: 1664 / 608;
+  background: currentColor;
+  -webkit-mask: url(/img/logo-script.svg?v=2) center / contain no-repeat;
+  mask: url(/img/logo-script.svg?v=2) center / contain no-repeat;
+}
+.wordmark { color: var(--persimmon); }
+.wordmark .logo-mark { width: 118px; }
+.footer-mark .logo-mark { width: min(80vw, 760px); }

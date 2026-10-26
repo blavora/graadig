@@ -49,10 +49,10 @@ h1, h2, h3, p { margin: 0; }
 /* The logo, recoloured via mask */
 .logo-mark {
   display: block;
-  aspect-ratio: 1510 / 566;
+  aspect-ratio: 1664 / 608;
   background: currentColor;
-  -webkit-mask: url(/img/logo-script.svg) center / contain no-repeat;
-  mask: url(/img/logo-script.svg) center / contain no-repeat;
+  -webkit-mask: url(/img/logo-script.svg?v=2) center / contain no-repeat;
+  mask: url(/img/logo-script.svg?v=2) center / contain no-repeat;
 }
 
 /* Box buttons */
